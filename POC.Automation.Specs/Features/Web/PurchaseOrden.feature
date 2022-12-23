@@ -1,4 +1,4 @@
-@Smoke
+@Functional
 Feature: Purchase Orden
 
 Background: Login
@@ -8,7 +8,7 @@ And I set '[Password]' in Password
 And I click Login
     
 
-  @Login
+  @PurchaseOrder
   Scenario: Verify that can process a purchase order 
   Given I add 'Sauce Labs Backpack' to cart
   And I add 'Sauce Labs Bolt T-Shirt' to cart
