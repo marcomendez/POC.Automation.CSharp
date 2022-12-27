@@ -43,7 +43,6 @@ namespace POC.Automation.Steps
             }
             catch 
             {
-
                 return param;
             }
         }
@@ -87,19 +86,23 @@ namespace POC.Automation.Steps
         /// <param name="elementName">Element name.</param>
         /// <param name="PageName">Page name.</param>
         /// <returns>Instance of any Element.</returns>
-        protected dynamic Element(string elementName, string PageName)
+        protected dynamic FactoryElement(string elementName, string PageName)
         {
+            // get class or page
             var pageClassType = GetPageClassType(PageName);
-
+            // get elemenent or property
             PropertyInfo elementInfo = pageClassType.GetTypeInfo().GetProperties()
                 .Where(property => property.GetCustomAttribute<ElementAttribute>().Name == elementName)
                 .FirstOrDefault();
-
+            
+            // get locator type
             ElementType elementType = elementInfo.GetCustomAttribute<ElementAttribute>().Type;
 
+            // build element assembly path
             string elementClass = string.Format(ElementTypeClassName, elementType.ToString());
             Type elementClassType = Assembly.Load(UIElementsAssemblyName).GetType(elementClass);
 
+            // create element instance
             return Activator.CreateInstance(elementClassType, new object[] { elementName, GetLocator(elementInfo) });
         }
 

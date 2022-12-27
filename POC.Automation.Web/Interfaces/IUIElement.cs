@@ -10,5 +10,7 @@ namespace POC.Automation.Web.Interfaces
         ElementType ElementType { get; set; }
 
         Locator Locator { get; set; }
+
+        bool Displayed();
     }
 }

@@ -2,7 +2,6 @@
 using POC.Automation.Web.Drivers;
 using POC.Automation.Web.Elements;
 using POC.Automation.Web.Interfaces;
-using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace POC.Automation.Steps
@@ -15,7 +14,7 @@ namespace POC.Automation.Steps
         }
 
         [StepDefinition(@"I navigate to Login")]
-        public void NavigateToClickUp()
+        public void NavigateToLogin()
         {
             WebDriverManager.Instance.Start();
         }
@@ -23,21 +22,22 @@ namespace POC.Automation.Steps
         [StepDefinition(@"I set '([^']+?)' in ([^']+?)(?: on ([^']+?)|)")]
         public void SetText(string text, string elementName, string PageName)
         {
-            ITexteable texteable = (ITexteable) Element(elementName, PageName);
+            ITexteable texteable = (ITexteable) FactoryElement(elementName, PageName);
             texteable.SetText(text);
         }
 
         [StepDefinition(@"I click ([^']+?)(?: on ([^']+?)|)")]
         public void Click(string elementName, string PageName)
         {
-            IClickeable clickeable = (IClickeable) Element(elementName, PageName);
+            IClickeable clickeable = (IClickeable) FactoryElement(elementName, PageName);
             clickeable.Click();
         }
 
         [StepDefinition(@"I should see '([^']+?)' displayed(?: on ([^']+?)|)")]
         public void VerifyThatElementIsDisplayed(string elementName, string PageName)
         {
-            bool status = Element(elementName, PageName).Displayed();
+            IUIElement element = (IUIElement) FactoryElement(elementName, PageName);
+            bool status = element.Displayed();
             Assert.IsTrue(status, $"The element {elementName} was not displayed.");
         }
 

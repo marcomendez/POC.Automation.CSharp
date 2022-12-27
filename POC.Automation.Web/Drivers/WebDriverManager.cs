@@ -38,12 +38,12 @@ namespace POC.Automation.Web.Drivers
         public void Start()
         {
             var driverOptions = new AppiumOptions();
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Marco");
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "Android 10");
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.BrowserName, "Chrome");
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, Env.PlatformName);
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, Env.DeviceName);
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, Env.PlatformVersion);
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.BrowserName, Env.BrowserName);
 
-            webDriver= new RemoteWebDriver(new Uri("http://127.0.0.1:4723/wd/hub"), driverOptions);
+            webDriver = new RemoteWebDriver(new Uri($"http://{Env.IPDevice}/wd/hub"), driverOptions);
             webDriver.Navigate().GoToUrl(Env.WebAppUrl);
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(int.Parse(Env.ImplicitWait));
         }

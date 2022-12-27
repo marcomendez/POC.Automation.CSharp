@@ -21,14 +21,14 @@ namespace POC.Automation.Specs.Features.Web
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Purchase Orden")]
-    [NUnit.Framework.CategoryAttribute("Smoke")]
+    [NUnit.Framework.CategoryAttribute("Functional")]
     public partial class PurchaseOrdenFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "Smoke"};
+                "Functional"};
         
 #line 1 "PurchaseOrden.feature"
 #line hidden
@@ -38,7 +38,7 @@ namespace POC.Automation.Specs.Features.Web
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Purchase Orden", null, ProgrammingLanguage.CSharp, new string[] {
-                        "Smoke"});
+                        "Functional"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -96,13 +96,13 @@ testRunner.And("I click Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(nul
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify that can process a purchase order")]
-        [NUnit.Framework.CategoryAttribute("Login")]
+        [NUnit.Framework.CategoryAttribute("PurchaseOrder")]
         public virtual void VerifyThatCanProcessAPurchaseOrder()
         {
             string[] tagsOfScenario = new string[] {
-                    "Login"};
+                    "PurchaseOrder"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that can process a purchase order", null, new string[] {
-                        "Login"});
+                        "PurchaseOrder"});
 #line 12
   this.ScenarioInitialize(scenarioInfo);
 #line hidden

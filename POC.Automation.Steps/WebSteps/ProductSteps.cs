@@ -1,5 +1,4 @@
-﻿using POC.Automation.Web.Elements;
-using POC.Automation.Web.Pages;
+﻿using POC.Automation.Web.Pages;
 using TechTalk.SpecFlow;
 
 namespace POC.Automation.Steps.WebSteps
