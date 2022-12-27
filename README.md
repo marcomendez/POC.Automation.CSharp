@@ -3,20 +3,25 @@
 
 ![Package Diagram](PackageDiagram.png)
 
+
 This automation framework is designed under Solid principles, Design Patterns like PageObject, Singleton, Strategy, Factory Pattern and advanced programing with Reflection.
 It has a different and advanced approach to the way of working with PageObject since it does not have a repository of Web actions,
  in any case it has WebElements with separate actions according to their type, such as Button.cs, Textfield.cs, Label.cs , etc
+
 
 ## Features
 - Core
 - Spec
 - Steps
 
-!(Features.png)
+![](Features.png)
+
 
 ## Core 
 Contains Helpers, and Web solutions
-!(Core.png)
+
+![](Core.png)
+
 Helpers Solution handles Enuns, Constants and Customs Attributes like ElementAttribute, LocatorAttribute, and PageAttributes.
 Example:
 ```cs
@@ -38,6 +43,7 @@ Example:
         }
     }
 ```
+
 
 These attributes are used into PageObject to Create properties and Locators like Button, Textfield, etc.
 
@@ -77,12 +83,14 @@ User Name, Password, and Login Button are a WebElements into Login PageObject
 
 
 ## Web
+
+![](Web.png)
+
 Contains DriverManager, Elements, Interfaces and Pages
-!(Web.png)
 
-WebDriverManager handles a singleton to create a unique webdriver.
+WebDriverManager: handles a singleton to create a unique webdriver.
 
-Elements contains Weblements Like Button, Texfields, Labels, etc
+Elements: contains Weblements Like Button, Texfields, Labels, etc
 
 Example:
 
@@ -155,6 +163,9 @@ Example:
 
 
 # Steps Solution
+
+![](Steps.png)
+
 Handles Steps definition that interact with Feature file, pages and helpers.
 It use Reflection as a factory pattern to find a Page Object and then gets webelements,
 it find pageObject using the Page attribute value, and use the Element attribute to get and 
@@ -210,7 +221,12 @@ BaseSteps.cs
 
 
 # Spec
+
+![](Specs.png)
+
 Handles Feature files with Scenarios to automation testing and a basic config file
+
+
 
 Feature fille
 Example:
