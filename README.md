@@ -11,11 +11,12 @@ It has a different and advanced approach to the way of working with PageObject s
 - Core
 - Spec
 - Steps
-![Features](Features.png)
+
+!(Features.png)
 
 ## Core 
 Contains Helpers, and Web solutions
-![Core](Core.png)
+!(Core.png)
 Helpers Solution handles Enuns, Constants and Customs Attributes like ElementAttribute, LocatorAttribute, and PageAttributes.
 Example:
 ```cs
@@ -77,7 +78,7 @@ User Name, Password, and Login Button are a WebElements into Login PageObject
 
 ## Web
 Contains DriverManager, Elements, Interfaces and Pages
-![Web](Web.png)
+!(Web.png)
 
 WebDriverManager handles a singleton to create a unique webdriver.
 
